@@ -1,0 +1,40 @@
+﻿@model Projecta.ViewModels.loanmodel.EditVM;
+@using Projecta.Entity;
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<fieldset>
+    <legend>Edit User</legend>
+    <form action="/Home/Edit" method="post">
+        @Html.HiddenFor(m => m.Id)
+        <div class="grid">
+            <div class="row">
+                <div class="col-1">EGN:</div>
+                <div class="col-2">@Html.TextBoxFor(m => m.EGN)</div>
+                <div class="col-2">@Html.ValidationMessageFor(m => m.EGN)</div>
+            </div>
+            <div class="row">
+                <div class="col-1">Amount:</div>
+                <div class="col-2">@Html.TextBoxFor(m => m.Amount)</div>
+                <div class="col-2">@Html.ValidationMessageFor(m => m.Amount)</div>
+            </div>
+            <div class="row">
+                <div class="col-1">First Name:</div>
+                <div class="col-2">@Html.TextBoxFor(m => m.FirstName)</div>
+                <div class="col-2">@Html.ValidationMessageFor(m => m.FirstName)</div>
+            </div>
+            <div class="row">
+                <div class="col-1">Last Name:</div>
+                <div class="col-2">@Html.TextBoxFor(m => m.LastName)</div>
+                <div class="col-2">@Html.ValidationMessageFor(m => m.LastName)</div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <input type="submit" value="Save" />
+                    <a href="/Home/Index">back</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</fieldset>
